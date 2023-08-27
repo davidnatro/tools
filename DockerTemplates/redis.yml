@@ -1,0 +1,13 @@
+version: '3.8'
+
+name: redis
+
+services:
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/redis/:/data/
+    command: ["redis-server", "/data/redis.conf"]
