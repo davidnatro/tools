@@ -1,3 +1,3 @@
 # Codestyles
 
-[Java](CustomGoogleCodeStyleJava.xml)
+[Java](/Codestyles/CustomGoogleCodeStyleJava.xml)
