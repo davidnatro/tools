@@ -14,10 +14,9 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_DB_URL: jdbc:postgresql://host.docker.internal:5432/postgres
-      KEYCLOAK_DATABASE_NAME: postgres
       KC_DB_USERNAME: postgres
       KC_DB_PASSWORD: postgres
-      KEYCLOAK_DATABASE_SCHEMA: postgres
+      KC_DB_SCHEMA: keycloak
       KC_HTTPS_CERTIFICATE_FILE: /etc/x509/https/cert.pem
       KC_HTTPS_CERTIFICATE_KEY_FILE: /etc/x509/https/key.pem
     command:
