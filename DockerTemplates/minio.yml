@@ -1,17 +1,18 @@
 version: '3.8'
-
+ 
 name: minio
-
+ 
 services:
   minio:
     image: quay.io/minio/minio
     container_name: minio
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "8082:9000"
+      - "8083:9001"
     environment:
       MINIO_ROOT_USER: miniouser
       MINIO_ROOT_PASSWORD: miniopassword
     volumes:
       - ./data/minio/:/data/
-    command: server /data --console-address ":9001"
+      - ./certs:${HOME}/minio/certs/
+    command: server /data --address ":9000" --console-address ":9001" --certs-dir "${HOME}/minio/certs/"
