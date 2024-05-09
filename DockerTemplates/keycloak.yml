@@ -8,6 +8,8 @@ services:
     image: bitnami/keycloak
     ports:
       - "9090:8080"
+    volumes:
+      - ./keycloak-plugins:/opt/bitnami/keycloak/providers/
     environment:
       KEYCLOAK_ADMIN_USER: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
