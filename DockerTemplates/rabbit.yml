@@ -1,0 +1,13 @@
+name: rabbit
+
+services:
+  rabbit:
+    container_name: rabbit
+    image: bitnami/rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_USERNAME: rabbit
+      RABBITMQ_PASSWORD: rabbit
+      RABBITMQ_MANAGEMENT_ALLOW_WEB_ACCESS: true
