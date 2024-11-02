@@ -1,0 +1,24 @@
+services:
+  zookeeper:
+    image: 'repka.kaspi.kz/bitnami/zookeeper:latest'
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    ports:
+      - '2181:2181'
+
+  kafka:
+    image: 'repka.kaspi.kz/bitnami/kafka:latest'
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_LISTENERS=SASL_PLAINTEXT://:9092
+      - KAFKA_ADVERTISED_LISTENERS=SASL_PLAINTEXT://localhost:9092
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=SASL_PLAINTEXT:SASL_PLAINTEXT
+      - KAFKA_SASL_ENABLED_MECHANISMS=SCRAM-SHA-256
+      - KAFKA_INTER_BROKER_LISTENER_NAME=SASL_PLAINTEXT
+      - KAFKA_CFG_SASL_MECHANISM_INTER_BROKER_PROTOCOL=SCRAM-SHA-256
+      - KAFKA_ALLOW_PLAINTEXT_LISTENER=no
+    ports:
+      - '9092:9092'
+    depends_on:
+      - zookeeper
