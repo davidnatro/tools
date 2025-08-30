@@ -49,9 +49,11 @@
     </option>
     <option name="IMPORT_LAYOUT_TABLE">
       <value>
-        <package name="" withSubpackages="true" static="true" />
+        <package name="" withSubpackages="true" static="false" module="true" />
         <emptyLine />
         <package name="" withSubpackages="true" static="false" />
+        <emptyLine />
+        <package name="" withSubpackages="true" static="true" />
       </value>
     </option>
     <option name="ALIGN_MULTILINE_RECORDS" value="false" />
@@ -153,6 +155,7 @@
     <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
     <option name="KEEP_BLANK_LINES_BEFORE_RBRACE" value="0" />
     <option name="BLANK_LINES_AFTER_CLASS_HEADER" value="1" />
+    <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
     <option name="ALIGN_MULTILINE_RESOURCES" value="false" />
     <option name="ALIGN_MULTILINE_FOR" value="false" />
     <option name="ALIGN_MULTILINE_TERNARY_OPERATION" value="true" />
